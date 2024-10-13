@@ -73,6 +73,7 @@ Here is an example of what the form will look like when filled out:
 - **Email**: `example@gmail.com`
 
 
+![Screenshot 2024-10-14 032620](https://github.com/user-attachments/assets/8c008549-0c79-4265-aad7-3b99f2f475f1)
 
 ### Sample Output
 
