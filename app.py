@@ -3,11 +3,11 @@ import subprocess
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY')  # Ensure this is set in your .env file
+app.secret_key = os.getenv('SECRET_KEY')  
 
 @app.route('/')
 def form():
@@ -21,13 +21,13 @@ def submit():
     output_folder = request.form['output_folder']
     email = request.form['email']
 
-    # Validate input
+    
     if not keyword or not num_images.isdigit() or not output_folder or not email:
         flash("Please fill out all fields correctly.", "error")
         return redirect(url_for('form'))
 
     try:
-        # Run the main.py script to download, zip, and send email
+        
         subprocess.run(['python', 'main.py', keyword, num_images, output_folder, email], check=True)
         flash("Images downloaded, zipped, and emailed successfully!", "success")
 
